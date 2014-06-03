@@ -8,7 +8,7 @@
 
 ```js
   var mongoose = require('mongoose');
-  var Schemas = require('roadapps.checklist')(mongoose);
+  var Schemas = require('roadapps.mod-checklist')(mongoose);
   var Checklist = Schemas.Checklist;
 
   mongoose.connect('mongodb://localhost/heisenberg');
