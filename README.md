@@ -14,7 +14,7 @@
   mongoose.connect('mongodb://localhost/heisenberg');
 
   Checklist.find().exec(function(err, checklists) {
-      console.dir(checklists);
+    console.dir(checklists);
   });
 
   var q = new Schemas.Question();

@@ -9,7 +9,8 @@
   },
   "keywords": [
     "mongodb",
-    "mongoose"
+    "mongoose",
+    "roadapps"
   ],
   "author": "Dg Nechtan <dnechtan@gmail.com> (http://hax0r.in)",
   "license": "MIT",

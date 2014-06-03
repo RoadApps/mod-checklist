@@ -1,11 +1,6 @@
-module.exports = exports = function(passport, app, config) {
+module.exports = exports = function(mongoose) {
 
-
-  var mongoose = require('mongoose'),
-    env = process.env.NODE_ENV || 'development',
-    config = require('../../config'),
-    Schema = mongoose.Schema
-
+  var Schema = mongoose.Schema
 
   var AnswerSchema = new Schema({
     question: {
@@ -101,7 +96,7 @@ module.exports = exports = function(passport, app, config) {
         type: String,
         default: ''
       }
-  }],
+    }],
 
     fields: [],
 
@@ -124,7 +119,7 @@ module.exports = exports = function(passport, app, config) {
         type: Date,
         default: Date.now
       }
-  }],
+    }],
 
     createdAt: {
       type: Date,
@@ -185,16 +180,15 @@ module.exports = exports = function(passport, app, config) {
             .exec(cb);
           }
         if (req.user.type === 'user-plus' || req.user.type == 'manager') {
-          config.groupUsers(req, function(err, users) {
-
-            criteria.user = {
-              $in: []
-            };
-            users.forEach(function(user) {
-              criteria.user.$in.push(user._id);
-            });
-            return ret('user plus');
-          });
+          // config.groupUsers(req, function(err, users) {
+          //   criteria.user = {
+          //     $in: []
+          //   };
+          //   users.forEach(function(user) {
+          //     criteria.user.$in.push(user._id);
+          //   });
+          //   return ret('user plus');
+          // });
         }
         if (req.user.type == 'user') {
           criteria.user = {
@@ -211,6 +205,8 @@ module.exports = exports = function(passport, app, config) {
 
   }
 
-  mongoose.model('Checklist', ChecklistSchema);
+  return {
+    Checklist: mongoose.model('Checklist', ChecklistSchema)
+  };
 
 }

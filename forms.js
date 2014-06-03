@@ -1,10 +1,6 @@
-module.exports = exports = function(passport, app, config) {
+module.exports = exports = function(mongoose) {
 
-  var mongoose = require('mongoose'),
-    env = process.env.NODE_ENV || 'development',
-    config = require('../../config'),
-    Schema = mongoose.Schema
-
+  var Schema = mongoose.Schema;
 
   var VehicleSchema = new Schema({
     name: {
@@ -129,8 +125,10 @@ module.exports = exports = function(passport, app, config) {
 
   }
 
-  mongoose.model('Form', FormSchema);
-  mongoose.model('Question', QuestionSchema);
-  mongoose.model('Vehicle', VehicleSchema);
+  return {
+    Form: mongoose.model('Checklist', ChecklistSchema),
+    Question: mongoose.model('Question', QuestionSchema),
+    Vehicle: mongoose.model('Vehicle', VehicleSchema)
+  };
 
 }
