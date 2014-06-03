@@ -1,0 +1,20 @@
+{
+  "name": "roadapps.mod-checklist",
+  "version": "1.0.0",
+  "description": "RoadApps Checklist Module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RoadApps/mod-checklist.git"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Dg Nechtan <dnechtan@gmail.com> (http://hax0r.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RoadApps/mod-checklist/issues"
+  },
+  "homepage": "https://github.com/RoadApps/mod-checklist"
+}
